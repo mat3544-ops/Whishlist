@@ -1123,7 +1123,7 @@
         .modal-content {
             background: white;
             border-radius: 20px;
-            padding: 24px 24px 20px 24px;
+            padding: 18px 20px 16px 20px;
             width: 100%;
             max-width: 420px;
             max-height: 90vh;
@@ -1134,10 +1134,10 @@
         }
 
         .modal-header {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 700;
             color: #4a4a4a;
-            margin-bottom: 20px;
+            margin-bottom: 14px;
             text-align: center;
         }
 
@@ -1386,18 +1386,18 @@
         }
 
         .tastings-section {
-            margin-top: 16px;
-            padding: 16px;
+            margin-top: 12px;
+            padding: 12px;
             background: rgba(212, 175, 106, 0.05);
             border: 1px solid #e8e8e0;
             border-radius: 12px;
         }
 
         .tastings-header {
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 700;
             color: #4a4a4a;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -1407,7 +1407,7 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             padding: 10px 12px;
             background: white;
             border: 1px solid #e8e8e0;
@@ -1495,8 +1495,8 @@
         }
 
         .form-section {
-            margin-bottom: 20px;
-            padding-bottom: 20px;
+            margin-bottom: 14px;
+            padding-bottom: 14px;
             border-bottom: 1px solid #f0f0f0;
         }
 
@@ -1505,24 +1505,24 @@
         }
 
         .form-section-title {
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 700;
             color: #8a8a8a;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .form-group {
-            margin-bottom: 14px;
+            margin-bottom: 10px;
         }
 
         label {
             display: block;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 600;
             color: #6a6a6a;
-            margin-bottom: 6px;
+            margin-bottom: 5px;
             text-transform: uppercase;
             letter-spacing: 0.3px;
         }
@@ -1532,11 +1532,11 @@
         input[type="number"],
         textarea {
             width: 100%;
-            padding: 11px;
+            padding: 9px;
             border: 2px solid #e8e8e0;
             border-radius: 10px;
             font-family: 'Raleway', sans-serif;
-            font-size: 16px;
+            font-size: 15px;
             color: #4a4a4a;
             transition: border-color 0.2s;
             -webkit-appearance: none;
@@ -1545,7 +1545,7 @@
 
         textarea {
             resize: vertical;
-            min-height: 60px;
+            min-height: 50px;
         }
 
         input:focus,
@@ -1558,8 +1558,8 @@
         .status-options,
         .rarity-options {
             display: flex;
-            gap: 10px;
-            margin-top: 8px;
+            gap: 8px;
+            margin-top: 6px;
             flex-wrap: wrap;
         }
 
@@ -1567,8 +1567,8 @@
         .status-option,
         .rarity-option {
             flex: 1;
-            min-width: calc(33% - 7px);
-            padding: 11px 8px;
+            min-width: calc(33% - 6px);
+            padding: 9px 8px;
             border: 2px solid #e8e8e0;
             border-radius: 10px;
             background: white;
@@ -1605,17 +1605,17 @@
         }
 
         .image-upload-container {
-            margin-top: 8px;
+            margin-top: 6px;
         }
 
         .image-preview {
             width: 100%;
             max-width: 100%;
             height: auto;
-            max-height: 250px;
+            max-height: 200px;
             object-fit: contain;
             border-radius: 10px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             display: block;
             background: #fafafa;
         }
@@ -3642,7 +3642,7 @@
                                             📥
                                             <input 
                                                 type="file" 
-                                                accept=".csv,text/csv,text/plain,application/csv,application/vnd.ms-excel"
+                                                accept=".csv"
                                                 style={{display: 'none'}}
                                                 onChange={(e) => {
                                                     handleCSVImport(e);
@@ -3650,23 +3650,6 @@
                                                 }}
                                             />
                                         </label>
-                                    </div>
-
-                                    <div className="fab-item">
-                                        <span className="fab-label">Coller CSV</span>
-                                        <button
-                                            className="fab-button import"
-                                            style={{background: '#8a7a5a'}}
-                                            onClick={() => {
-                                                setCsvMode('import');
-                                                setCsvData([]);
-                                                setCsvError('');
-                                                setCsvModalOpen(true);
-                                                setFabMenuOpen(false);
-                                            }}
-                                        >
-                                            📋
-                                        </button>
                                     </div>
 
                                     <div className="fab-item">
@@ -4116,45 +4099,6 @@
                                 </>
                             )}
 
-                            {csvMode === 'import' && csvData.length === 0 && (
-                                <>
-                                    <div style={{marginBottom: '12px', color: '#6a6a6a', fontSize: '13px', textAlign: 'center'}}>
-                                        Si le sélecteur de fichier ne fonctionne pas, colle ton CSV ci-dessous :
-                                    </div>
-                                    <textarea
-                                        placeholder="Colle ici le contenu de ton fichier CSV..."
-                                        style={{
-                                            width: '100%',
-                                            minHeight: '120px',
-                                            padding: '10px',
-                                            borderRadius: '8px',
-                                            border: '1px solid #d4af6a',
-                                            fontFamily: 'monospace',
-                                            fontSize: '12px',
-                                            resize: 'vertical',
-                                            marginBottom: '10px'
-                                        }}
-                                        onChange={(e) => {
-                                            const text = e.target.value.trim();
-                                            if (text.length > 10) {
-                                                const parsed = parseCSV(text);
-                                                if (parsed.length > 0) {
-                                                    setCsvData(parsed);
-                                                    setCsvError('');
-                                                } else {
-                                                    setCsvError('Format CSV non reconnu');
-                                                }
-                                            }
-                                        }}
-                                    />
-                                    <div className="button-group">
-                                        <button type="button" className="btn btn-cancel" onClick={() => setCsvModalOpen(false)}>
-                                            Annuler
-                                        </button>
-                                    </div>
-                                </>
-                            )}
-
                             {csvError && (
                                 <div className="csv-error">
                                     ⚠️ {csvError}
@@ -4273,75 +4217,9 @@
     </script>
 
     <script>
-        // ============================================================
-        // PWA - ICÔNES PNG générées en canvas (compatibles Android)
-        // ============================================================
-        function generateIconDataURL(size) {
-            const canvas = document.createElement('canvas');
-            canvas.width = size;
-            canvas.height = size;
-            const ctx = canvas.getContext('2d');
-            const radius = size * 0.22;
-
-            // Fond dégradé doré
-            const grad = ctx.createLinearGradient(0, 0, size, size);
-            grad.addColorStop(0, '#e8c97a');
-            grad.addColorStop(1, '#b8933a');
-            ctx.fillStyle = grad;
-            ctx.beginPath();
-            ctx.moveTo(radius, 0);
-            ctx.lineTo(size - radius, 0);
-            ctx.quadraticCurveTo(size, 0, size, radius);
-            ctx.lineTo(size, size - radius);
-            ctx.quadraticCurveTo(size, size, size - radius, size);
-            ctx.lineTo(radius, size);
-            ctx.quadraticCurveTo(0, size, 0, size - radius);
-            ctx.lineTo(0, radius);
-            ctx.quadraticCurveTo(0, 0, radius, 0);
-            ctx.closePath();
-            ctx.fill();
-
-            // Verre de vin simplifié (dessin vectoriel)
-            ctx.fillStyle = 'rgba(255,255,255,0.95)';
-            const cx = size / 2;
-            const unit = size / 10;
-
-            // Coupe du verre
-            ctx.beginPath();
-            ctx.ellipse(cx, unit * 2.5, unit * 2.2, unit * 0.6, 0, 0, Math.PI * 2);
-            ctx.fill();
-
-            ctx.beginPath();
-            ctx.moveTo(cx - unit * 2.2, unit * 2.5);
-            ctx.bezierCurveTo(cx - unit * 2.5, unit * 5, cx - unit * 1.2, unit * 6, cx, unit * 6.5);
-            ctx.bezierCurveTo(cx + unit * 1.2, unit * 6, cx + unit * 2.5, unit * 5, cx + unit * 2.2, unit * 2.5);
-            ctx.fill();
-
-            // Tige
-            ctx.fillRect(cx - unit * 0.25, unit * 6.5, unit * 0.5, unit * 1.8);
-
-            // Base
-            ctx.beginPath();
-            ctx.ellipse(cx, unit * 8.5, unit * 1.5, unit * 0.4, 0, 0, Math.PI * 2);
-            ctx.fill();
-
-            // Reflet dans la coupe (couleur vin)
-            ctx.fillStyle = 'rgba(140, 30, 60, 0.55)';
-            ctx.beginPath();
-            ctx.ellipse(cx, unit * 3.5, unit * 1.6, unit * 1.0, 0, 0, Math.PI * 2);
-            ctx.fill();
-
-            return canvas.toDataURL('image/png');
-        }
-
-        const icon192 = generateIconDataURL(192);
-        const icon512 = generateIconDataURL(512);
-
-        // ============================================================
-        // PWA MANIFEST
-        // ============================================================
+        // PWA Manifest inline
         const manifest = {
-            "name": "Ma Cave à Vins",
+            "name": "Ma Cave à Vins - Collection & Wishlist",
             "short_name": "Ma Cave",
             "description": "Gérez votre collection de vins et votre wishlist œnologique",
             "start_url": "./",
@@ -4351,178 +4229,67 @@
             "orientation": "portrait-primary",
             "icons": [
                 {
-                    "src": icon192,
+                    "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect fill='%23d4af6a' width='192' height='192' rx='40'/%3E%3Ctext x='96' y='140' font-size='110' text-anchor='middle' fill='white'%3E🍷%3C/text%3E%3C/svg%3E",
                     "sizes": "192x192",
-                    "type": "image/png",
+                    "type": "image/svg+xml",
                     "purpose": "any"
                 },
                 {
-                    "src": icon512,
+                    "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect fill='%23d4af6a' width='512' height='512' rx='100'/%3E%3Ctext x='256' y='380' font-size='300' text-anchor='middle' fill='white'%3E🍷%3C/text%3E%3C/svg%3E",
                     "sizes": "512x512",
-                    "type": "image/png",
+                    "type": "image/svg+xml",
                     "purpose": "any maskable"
                 }
             ],
-            "categories": ["lifestyle", "food"]
+            "categories": ["lifestyle", "food"],
+            "screenshots": []
         };
 
         const manifestBlob = new Blob([JSON.stringify(manifest)], { type: 'application/json' });
         const manifestURL = URL.createObjectURL(manifestBlob);
         document.getElementById('manifest-placeholder').setAttribute('href', manifestURL);
 
-        // ============================================================
-        // SERVICE WORKER avec cache offline complet
-        // ============================================================
+        // Service Worker inline minimal
         if ('serviceWorker' in navigator) {
-            const CACHE_VERSION = 'wine-cave-v5';
-
             const swCode = `
-                const CACHE_NAME = '${CACHE_VERSION}';
-                const GOOGLE_FONTS_CACHE = 'wine-fonts-v1';
-
-                // À l'installation : mise en cache des ressources critiques
+                const CACHE_NAME = 'wine-wishlist-v1';
+                
                 self.addEventListener('install', (event) => {
                     self.skipWaiting();
-                    event.waitUntil(
-                        caches.open(CACHE_NAME).then(cache => {
-                            // On met en cache la page elle-même
-                            return cache.add('./');
-                        }).catch(() => {})
-                    );
                 });
-
-                // À l'activation : nettoyage des anciens caches
+                
                 self.addEventListener('activate', (event) => {
-                    event.waitUntil(
-                        caches.keys().then(keys =>
-                            Promise.all(
-                                keys
-                                    .filter(k => k !== CACHE_NAME && k !== GOOGLE_FONTS_CACHE)
-                                    .map(k => caches.delete(k))
-                            )
-                        ).then(() => clients.claim())
-                    );
+                    event.waitUntil(clients.claim());
                 });
-
-                // Stratégie fetch : Cache First pour les fonts, Network First pour le reste
+                
                 self.addEventListener('fetch', (event) => {
-                    const url = event.request.url;
-
-                    // Google Fonts : cache-first (elles ne changent pas)
-                    if (url.includes('fonts.googleapis.com') || url.includes('fonts.gstatic.com')) {
-                        event.respondWith(
-                            caches.open(GOOGLE_FONTS_CACHE).then(cache =>
-                                cache.match(event.request).then(cached => {
-                                    if (cached) return cached;
-                                    return fetch(event.request).then(response => {
-                                        cache.put(event.request, response.clone());
-                                        return response;
-                                    }).catch(() => cached);
-                                })
-                            )
-                        );
-                        return;
-                    }
-
-                    // Pour les ressources data: et blob: (icônes générées), on passe directement
-                    if (url.startsWith('data:') || url.startsWith('blob:')) {
-                        return;
-                    }
-
-                    // Stratégie Network First avec fallback cache (app shell)
-                    event.respondWith(
-                        fetch(event.request)
-                            .then(response => {
-                                // Si OK, on met à jour le cache
-                                if (response.ok) {
-                                    const clone = response.clone();
-                                    caches.open(CACHE_NAME).then(cache => {
-                                        cache.put(event.request, clone);
-                                    });
-                                }
-                                return response;
-                            })
-                            .catch(() => {
-                                // Offline : on sert depuis le cache
-                                return caches.match(event.request).then(cached => {
-                                    if (cached) return cached;
-                                    // Fallback sur la page principale
-                                    return caches.match('./');
-                                });
-                            })
-                    );
+                    // Pass through, no caching for now
+                    event.respondWith(fetch(event.request));
                 });
             `;
-
-            const swBlob = new Blob([swCode], { type: 'application/javascript' });
-            const swURL = URL.createObjectURL(swBlob);
-
-            navigator.serviceWorker.register(swURL, { scope: './' }).then(registration => {
-                console.log('✅ PWA Service Worker enregistré - offline ready');
+            
+            const blob = new Blob([swCode], { type: 'application/javascript' });
+            const swURL = URL.createObjectURL(blob);
+            
+            navigator.serviceWorker.register(swURL).then(registration => {
+                console.log('✅ PWA Service Worker enregistré');
             }).catch(err => {
-                console.log('⚠️ Service Worker :', err);
+                console.log('⚠️ Service Worker non disponible:', err);
             });
         }
 
-        // ============================================================
-        // BOUTON D'INSTALLATION NATIF
-        // ============================================================
+        // Install prompt handling
         let deferredPrompt;
-
         window.addEventListener('beforeinstallprompt', (e) => {
             e.preventDefault();
             deferredPrompt = e;
-
-            // Afficher un bouton d'installation discret si pas encore installé
-            if (!window.matchMedia('(display-mode: standalone)').matches) {
-                const btn = document.createElement('button');
-                btn.id = 'pwa-install-btn';
-                btn.innerHTML = '📲 Installer l\'app';
-                btn.style.cssText = `
-                    position: fixed;
-                    bottom: 80px;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    background: linear-gradient(135deg, #d4af6a, #b8933a);
-                    color: white;
-                    border: none;
-                    border-radius: 24px;
-                    padding: 12px 24px;
-                    font-size: 14px;
-                    font-weight: 700;
-                    font-family: 'Raleway', sans-serif;
-                    cursor: pointer;
-                    box-shadow: 0 4px 20px rgba(212,175,106,0.5);
-                    z-index: 9999;
-                    animation: pulse-install 2s infinite;
-                    white-space: nowrap;
-                `;
-
-                const style = document.createElement('style');
-                style.textContent = `
-                    @keyframes pulse-install {
-                        0%, 100% { box-shadow: 0 4px 20px rgba(212,175,106,0.5); }
-                        50% { box-shadow: 0 4px 32px rgba(212,175,106,0.85); }
-                    }
-                `;
-                document.head.appendChild(style);
-                document.body.appendChild(btn);
-
-                btn.addEventListener('click', async () => {
-                    btn.remove();
-                    deferredPrompt.prompt();
-                    const { outcome } = await deferredPrompt.userChoice;
-                    console.log(outcome === 'accepted' ? '✅ App installée !' : '❌ Installation refusée');
-                    deferredPrompt = null;
-                });
-            }
+            console.log('💡 Application installable');
         });
 
+        // Track installation
         window.addEventListener('appinstalled', () => {
             console.log('✅ Application installée sur l\'écran d\'accueil');
             deferredPrompt = null;
-            const btn = document.getElementById('pwa-install-btn');
-            if (btn) btn.remove();
         });
 
         // Detect if already running as PWA
@@ -4532,7 +4299,9 @@
 
         // iOS specific: hide address bar
         window.addEventListener('load', () => {
-            setTimeout(() => { window.scrollTo(0, 1); }, 0);
+            setTimeout(() => {
+                window.scrollTo(0, 1);
+            }, 0);
         });
     </script>
 </body>
